@@ -1,9 +1,11 @@
+const path    = require('path')
 const express = require('express')
 const hbs     = require('express-handlebars')
 const morgan  = require('morgan')  // morgan lấy các thông tin request để lập trình viên dễ quan sát trong quá trình thực hiện
 const app     = express()
 const port    = 3000
 
+app.use(express.static(path.join(__dirname,'public')));
 
 app.use(morgan('combined'));
 
