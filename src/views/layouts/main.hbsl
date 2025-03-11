@@ -10,7 +10,7 @@
 <body>
     <div>
         {{> header}}
-        <div>
+        <div  class="container">
             {{{body}}}
         </div>
         {{> footer}}
