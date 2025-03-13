@@ -15,7 +15,7 @@ app.engine('hbs', hbs.engine({ // ở đây thì đặt lại tên đuôi của 
                                 // đặt đuôi khác tý để hiểu hơn về các file
 }));
 app.set('view engine', 'hbs');
-app.set('views', 'src/views');
+app.set('views', 'src/resources/views');
 
 //routing
 app.get('/', (req, res) => {
