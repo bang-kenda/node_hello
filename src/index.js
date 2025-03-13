@@ -3,6 +3,7 @@ const express = require('express')
 const hbs     = require('express-handlebars')
 const morgan  = require('morgan')  // morgan lấy các thông tin request để lập trình viên dễ quan sát trong quá trình thực hiện
 const app     = express()
+const route   = require('./routes')
 const port    = 3000
 
 app.use(express.static(path.join(__dirname,'public')));
@@ -18,19 +19,7 @@ app.set('view engine', 'hbs');
 app.set('views', 'src/resources/views');
 
 //routing
-app.get('/', (req, res) => {
-  // res.send('Hello World nha ban nhung!')
-  res.render('home'); // đi tìm cái view tên là home để hiển thị
-})
-//routing
-app.get('/news', (req, res) => {
-  console.log(req.query.q); // xem giá trị của req 
-  res.render('news'); // đi tìm cái view tên là news để hiển thị
-})
-//routing
-app.get('/search', (req, res) => {
-  res.render('search'); // đi tìm cái view tên là search để hiển thị
-})
+route(app);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
